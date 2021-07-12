@@ -1,0 +1,610 @@
+0.1q
+
+- Vehicle save data is now contained in a Vehciles.xml, all information about this vehicle is saved, and all mods should be applied when the vehicle is loaded. Make sure to copy across the new LSLife_Vehicles.XML.
+- Customers that are in a vehicle should drive to you instead of stopping in the middle of the road.
+- Police will need to be closer to spot you dealing if you are in a vehicle.
+- Reworked how customers are selected and made slight increase to the chance of getting a customer.
+- Dealer save data will now get updated as his stock replenishes throughout the day.
+- I lost the source code for the old 0.1q update, the source code that i had seemed to be some combination of 0.1p and a other changes, but i'm not sure what changes. If you spot something that was working but no longer works let me know please.
+
+0.1r
+- Fixed stash car not getting destroyed by police when confiscated.
+- Dealer will no longer sell you drugs if you do not have cash or the value of the drugs brought brings your dept above $100,000. To buy more you need to start paying off your dept, or earn some cash.
+- Customers will now run if they have to cross roads to get to you.
+- Think i fixed Customers not driving away.
+- Selecting Pay Dept in the dealer menu will take money from the player upto the value of the dept.
+- Added checks to see if a copy of stash car was loaded by the game after the player loads a quick save. This should stop 2 cars being spawned.
+
+0.1s
+
+- New customers should always run if they are far, near customers should walk.
+- Played with the job spawning to try fix that one random job in the middle of the road.
+- Fixed a bug that caused customers to stand still and not walk to the player unless the player moved.
+- Fixed customers that have previously been turned away without a sale being chosen as a customer.
+- Fixed a bug that could caused the Stash Vehicle to spawn dead. (Worst case the car is invincible until the player enters then exits the vehicle. So drive it to get repairs or something.)
+- Your Killer sould now drop a bag on death containing all your weapons and drugs.
+
+0.1t
+- Adjusted dealer debt interest rates to 5%, a notification will be sent to detailing how much the debt is.
+- Fixed a bug that caused dealing to be canceled after getting your drugs back from the pickup when killed.
+
+0.1u
+
+- Heat mechanics updated. Chance of being reported to police for dealing is now affected by a new mechanic AreaHeat, each area gets its own heat value, this will increase a lot if you are reported for selling drugs, or while wanted the heat value for the area you are currently in will increase slowly. Each area's heat will decrease slowly over time if not wanted by the police.
+- You're killer will now attack properly on sight. He should give up the chase if you lose him.
+- Fixed a bug with Killer blip not being removed.
+
+0.1v
+- NullReference on VehicleLoad() should no longer be possible.
+- Got rid of the help text spam for the stash house interactions.
+- Rebalanced how angry peds are chosen. Additionally angry peds can now choose from a pistol, bat, or fists.
+- If they are carrying better than the chosen weapon (before my script takes control of them) they will equip the better weapon.
+- Police now need line of sight to see you handing over drugs. The range for detection is now 55m.
+- The notification received when the Dealer orders a reload will contain the day its to be expected.
+
+0.1w
+- You can no longer sprint while you have the bag.
+- The bag is now given to the player if the players inventory size is higher than 15. 
+- Inventory item space, 28g or 1oz of drugs counts as 1 unit. 1 weapon counts as 1 unit. $50,000 cash counts as 1 unit.
+- Forced repair on Stash Vehicle when the script starts and when spawned.
+- Heat Bar has been reworked, changed its colour but also how it functions under the hood.
+  Should a lot more reliable at indicating the players chance to be ratted on. Any value is bad, more is badder.
+  
+0.1x
+- Fixed that not so random job in the middle of town where the customer was stood in the middle of the road. This was defaulting to the cords 0,0,0 for some reason. This should never happen again.
+- Angry peds that are far away should now move towards the player before trying to attack.
+- Fixed move customer logic. They should correctly run if on a road, or if they are more than 8m away.
+- Dealer now use there money to buy stock, If they have less then 40oz of weed they prioritize buying weed spending 75% of all money on it. Less then 40oz of crack 60% of the remainder gets spent on crack and if less then 40oz of coke whats left gets spent on coke.
+- Added subtitle detailing drop mission if accepted.
+- Fix for some peds not driving away after entering there vehicle. Not sure if this is completely fixed.
+- Increased the range at which Customers are removed as customers.
+- Changed the requirement for getting job offers. Its no longer tied to the dealers money, Your debt needs to be below $110000, and you need to be carrying 2oz or 58g or more.
+
+0.1y
+- When dealing in a vehicle, new Customers will enter the vehicle better, prefering to head to the right of the vehicle before trying to enter. I noticed with certain vehicles they would group up at the front and not enter correctly.
+- Removed some code i had left in by mistake that was sometimes causing police blips to be removed.
+- Calling Zee while dealing will no longer draw a 2nd heatbar.
+- NativeUI's pool draw call will only happen when dealing.
+- Fixed oldCustomers dead bodies being persistent.
+
+0.1z
+- Peds spawned for jobs can no longer spawn in a road.
+- Switching characters will no longer break anything.
+- Better cleanup of entities that are no longer needed.
+- Angry peds will now randomly choose from Fists, Bat, Knife, Pistol, Pump action shotgun and Micro SMG.
+- When an angry ped is chosen a drive-by will happen, it could happen straight away or a few mins after but it will come.
+- less wealthy areas now have a chance to spawn a an attack group in a vehicle if you spend a lot of time in one street dealing.
+- If your debt reaches above 170000 there chance a drive-by will happen, While the Dealer is spawned the drive-by caused from the debt can not spawn. This should give you the ability the get the debt paid. If you want too. All drive-bys are all pretty much the same for now.
+- Dealer stock is now capped 100oz of weed, 70oz crack, 40oz of cocaine. His stock now dipleates by 50% every day. But he will only get money for half the value. (He buys it at half the price he sells to you). His money is capped at $1.2Mill. These capps are only applied on a daily basis so its possible to catch him with more stock if you're lucky.
+- I have added a new file Contained in a folder labeled DONOTCOPY This is a list of all the areas in the game im using, along with its wealth. If you enable DEBUG mode and push your Mian key (the one that shows your current inventory of drugs) you will get a notification of youre current area and its wealth. If you fancy helping me tweak these id be greatfull of any suggestions.
+
+0.1z1 - Drive-bys events could only trigger if the player had the Bag.
+0.1z2 - Dealer didn't stop sending drive-bys after you payed some debt unless you saved and reloaded.
+0.1z3 - Fixed a bug that can cause the killer to be deleted.
+0.1z4 - Fixed another bug that caused the killer to be marked as none persistant caused them to vanish.
+		Angry peds tweaked, should be a little less of them.
+		drive-bys caused by angry peds can only happed when the player has the bag, and then its only a 1/10 chance.
+
+0.2
+- iFruit Contacts has been reworked, You now have one contact to call. Zee, from here you can request to start selling, request to buy drugs and ask for a lift. Calling Zee while you are dealing will cancel dealing. (removing the need for extra Keybind)
+- Reduced the cooldown on poor area drivebys from 120secs to 100sec.
+- Reworked the randomness of all driveby related events.
+- Drive-by peds now select from 2 loadouts. Pistol+PumpAction or MicroSMG+Carbine.
+- Drive By vehicles are randomised Suv's local to the area.
+- First implementation of a Rep/Level system for the Dealer. Earn rep by spending cash, 1 rep for every $100. When paying off a dept you earn 1 rep for every $500. The level is based on current rep, scales on a logarithmic curve, meaning early levels are easy to earn but at higher levels you require higher amounts of rep for the next level. 
+- Example of requirement the first 20 levels.
+	Lvl:1 Rep:626
+	Lvl:2 Rep:2501
+	Lvl:3 Rep:5626
+	Lvl:4 Rep:10001
+	Lvl:5 Rep:15626
+	Lvl:6 Rep:22501
+	Lvl:7 Rep:30626
+	Lvl:8 Rep:40001
+	Lvl:9 Rep:50626
+	Lvl:10 Rep:62501
+	Lvl:11 Rep:75626
+	Lvl:12 Rep:90001
+	Lvl:13 Rep:105626
+	Lvl:14 Rep:122501
+	Lvl:15 Rep:140626
+	Lvl:16 Rep:160001
+	Lvl:17 Rep:180626
+	Lvl:18 Rep:202501
+	Lvl:19 Rep:225626
+	Lvl:20 Rep:250001
+- The level of the Dealer will determine a few things. Increasing the dealers stock caps, make the dealer restock faster, give more jobs to the player, give the player a discount and increase your credit limit with them.
+- Dealers cooldown on being able to order a reload and also the time for delivery is reduced from (in gametime) 1 day to 10 hours. This cooldown can be further reduced by the dealers level. 1 level is worth 10 minutes, so lvl 6 will reduce this down to 9 Hours. Its capped at a 6 hour reduction.
+- Dealers base chance for giving the player a job is now modified by level. Starting at 30% gaining 1% per lvl.
+- The price a player can buy goods from a dealer is now reduced by that dealers level. 1% reduction per lvl.
+- Fixed a typo that was causing any cocaine transferred from the StashVehicle to the Player to be added to the players crack.
+- You now have access to a weapons dealer when calling Zee, its basic for now. Not much choice but discounts applied based on level and you earn rep on any money spent.
+
+0.2.1
+- You can now buy Pistol ammo from the pistol section in the weapons dealer menu..
+- Fixed Weapons Dealer giving Pistol's with no ammo.
+- Fixed Debt being decreased instead of increased when buying weapons without the cash needed.
+
+0.2.2
+- Fixed Rep not being displayed consistently across menus.
+- Fixed a bug that could cause you to get no rep from buy drugs.
+- The price the dealer buys drugs at (half the sell price) is now reduced buy 1% per level also When the dealers stock diminishes he now earns 1% more per level o its value (half the sell price).
+
+0.2.3
+- Notification received when Zee reloads now contains what he brought.
+- Fixed Weapon Dealer Menu not displaying discount on weapons when a discount was given.
+- Fixed not being able to interact with a delivery job customer when you close the Sell Drugs Menu without dismissing or selling.
+- Required drugs for job offers (2oz) now considers all drugs stored in all stashes not just what the player is carrying.
+- Zee's Driver will be a little more intelligent. Slowing down better as he approaches his destination and attempting to park. Waiting a little while before he drives away when dismissed. Also by default he will follow traffic laws, interact button will tell him to go faster pushing it again will slow him down.
+
+0.2.3a
+- Fixed Job Customers not being interactable under certain conditions.
+
+0.2.4
+- Having any Heat will mean a 1/10 chance to spawn a cop that patrols the players area on foot. It is possible to lose him if you get far enough away.
+- areaHeat is increased by +1000 for being spotted handing over drugs by the police in an area. This is the same amount of as being ratted on. Making it harder to sell in an area you have previously been spotted handling drugs.
+
+0.2.5
+- Heatbar reworked a little, along with added thresholds for being ratted on and cop spawns while dealing. Bar will now change colour, when its yellow(>25%) a cop can spawn, when its red(>50%) you can be snitched on.
+
+0.2.6
+- When starting to deal, you can now select what drugs you want to sell.
+- You no longer need to be carrying drugs on you to start dealing, but you do need some stored somewhere. 
+- Interacting with a customer while not having any drugs no longer cancels dealing, and no longer removes that customer.
+- Chance of getting a customer reduced from 65% to 60%.
+
+0.2.6a
+- You can no longer start dealing without any drugs selected to sell.
+- Added LSlife.pdb to the DONOTCOPY folder. If you experiance an crashes or errors, copy this file into your /scripts folder and play till the error happens again. This will create a more detailed log of the error and help me debug the error.
+
+0.2.6b
+- Fixed all crashes that occur when having only Crack or Cocaine selected to sell while in an area that will not buy Crack or Cocaine. You will now recive a message telling you if the drug you are selling is not wanted in the area youre trying to sell in.
+
+0.2.6c
+- Fixed drop offers causing crashes if drugs being sold are not wanted in the area the drop spawns.
+
+0.2.7
+- Rewrote a large part of how my script handles areas on the map and drugs within each area. This enables me greater control of the market and whats happening in that area. I have done in in such a way its easy for me to add new data in future for each area for new events and other random stuff happening.
+- Each area on the map now has its own values for prices, supply, demand for each drug.These values mostly stay unchanged across the board right now, but i have plans to make them more dynamic in the next update.
+- Wealth no longer exists, its been replaced with:
+	AreaType - Currently 3 types. Poor, Normal, Rich.
+	CopPresence - Value ranging from 0 - 10 representing the strength in the area.
+	GangPresence - Value ranging from 0 - 10 representing the strength in the area.
+- You can effectively sell anything anywhere, customer selection has been changed, each drug in each area has its own timer between posible sales. The Length of this timer is based of the drugs demand, Demand is then based of the drugs prefered AreaType vs the AreaType of the place youre selling and the supply of the drug. Supply can not change right now and will always remain at 0.
+- None of this new Area data is being saved between games currently and is generated based on its type. This will change in the future once i am finished with how the area data is structured and more testing is done.
+
+0.2.7a
+- Fixed System.ArgumentOutOfRangeException that could happen at LSlife.LSL.Area.GetCustomer(List`1 peds) if there where no valid peds within range to become customers but a drugs demand dictated there should be a new customer selected.
+- Fixed menu and notification text for drop customers.
+- Fixed Area.Drugs.Drug.Delay for all area drugs not being considered for selecting new customers and doubled base values for all Delays. 
+- Fixed Area.Drugs.Drug.SelectCustomer not being reset to false when a customer should be selected but the player is not selling that drug.
+- Removed the do not copy folder in the, its redundant.
+
+0.2.7b
+- Fixed System.NullReferenceException. Again caused by no valid peds for customers.
+
+0.2.7c
+- Fixed a bug that could sometimes cause changing areas to multiply the base values used when calculating Area.Drugs.Drug.Delay.
+
+0.2.8 
+- When generating new Area data, Demand for each Drug is now a randomized value between 0.1 and 1.25 based on that drugs AreaType instead of hardcoded. 
+- Poor areas Rich drugs will be weighted towards the bottom end of the scale, Normal drugs middle, Poor drugs towards the top.
+- Rich areas Poor drugs will be weight towards the bottom end of the scale, Normal drugs middle, Rich drugs towards the top.
+- Normal areas Normal drugs will be weighted towards the top end of the scale, Rich and Poor drugs below middle.
+- All drugs have a base Delay value of 10 seconds, baseDelay / Drug.Demand = Drug.Delay. Every second there is a 60% chance of a check if any drugs Delay has expired. An Expired Delay will flag the players area for customer selection.
+
+0.2.9
+- If the Highest demands for drugs go unmet in an area. Gang Presence will have a 5% chance to increase every 120secs.
+- An area that has a stash house chance to increase gang presence is reduced from 5% to 1%, and will start with a presence of 0.
+- Random Drive Bys now require the players current area Gang Presence to be greater 4 and the player to have spent more than 120secs dealing on a single road. When these conditions are met there is a 5% chance every 10sec of a drive by happening.
+- Random Robberies now require the players current area Gang Presence to be greater than 0. When presence is greater than 0, There is a base 1% chance of a robbery gaining +1% for every 1 gang presence. If you have the bag and gang presance is greater than 4 there is a 10% chance of this robbery spawning a driveby. 
+- Gang presence will be reduced by 1 for every ped that tries to rob or driveby you that dies.
+
+0.2.10
+- Zee's drug prices have been halved Weed 500, Crack 2500, Cocaine 5000.
+- If Gang presence is greater than 0 in the players current area, a Street Dealer will be spawned.  Drugs demand is divide by Dealers, the player also counts as a dealer while active, meaning Longer delays between customers being selected.
+- Street dealers location is unknown, Customers have a 10% chance of giving you this information, every level of gang presence will reduce this chance by 0.5%. Once a street dealers location is revealed moving away from that area will cause his whereabouts to be unknown again. If a street dealer dies gang presence is reduced by 1.
+- Fixed a few bugs with the new customer selection code. This will fix having more weed customers than should be, and Gang Presence not being able to raise when it should. Also more than 1 type of Customers not being selected when they could be.
+- There is now an element of randomness to customer selection, based on demand ontop of the current delay governing the time between posible new customers. Higher demands will have better odds.
+- Fixed a bug that could cause the same ped to be selected more than once for a sale.
+- Rewrote the logic controlling customer movement before they are added to the players group. They should now correctly walk or run based on a few conditions. Still a bit buggy but better than every ped running all the time.
+
+0.2.11
+- Fixed area heat not being reduced while not wanted if the player was in that area.
+- More changes to customer movement.
+- The Street value of all drugs is now reduced by the price of 1g for every 3.5gs the customer purchased.
+   eg Weed, Street value of an g being $50.
+   Selling an oz in anything less than 3.5g a time would earn you $1400. 
+   Selling a oz in one go $1000. (28/3.5)*50 = $400 discount.
+- You will no longer receive drop request for drugs you're not selling.
+- Fixed System.NullReferenceException when spawning a Street Dealer.
+- Street dealers now have body armour, a pistol and a random amount of cash. They are still pretty passive but if you approach them with a weapon drawn they may react.
+- Customers can no longer turn hostile right after deal is done.
+
+0.2.12
+- Street Dealers can no longer be selected as a customer.
+- Street Dealers will now have customers approaching them.
+- Street Dealers Will wander away if you get to close and act like a normal ped. Will resume dealing once a suitable spot is found, and will retaliate if threatened.
+- Street Dealers will now drop a random amount of drugs upon death.
+- Street Dealers will no longer be removed upon leaving the area, unless you are more than 300m away.
+- The nearest customer in front of the player is now chosen first when interacting with a crowd of customers.
+- Police presence will now have more of an effect on the players Heat.
+- Restructure project to use separate source code files for different parts of the script.
+- Fix for System.NullReferenceException when spawning Drug Dealer and Weapons Dealer.
+- Fixed Killers Blip from being removed, after being defined as Your Killer. (this only happened sometimes)
+- Improvements to Help Text (no more pinging noises while in menus)
+- Menus can no longer be opened while a Menu is open.
+
+0.2.13 
+- Your Killers bag will now give the correct amount of ammo for the weapon Your Killer was using before death.
+- Fixed System.ArgumentException: An item with the same key has already been added. (This could happen after being killed 2-3 times and a Killer target is assigned.)
+- Fixed a bug with Your Killers bag containing wrong weapons.
+- Fixed a bug that could cause the Street Dealer model to default to Acult02AMY if no suitable ped model was found in the players area. The script will no longer spawn a Dealer, instead it will keep looking for suitable ped.
+- Fixed Street Dealers DEBUG flag always being true, even if player has DEBUG set to false. (This will remove there blips and stop the notification spam)
+
+0.2.14
+- Fixed player inventory not saving with correct values after picking up a dealers bag.
+- Slight buff to the chance of getting a customer for weed in all areas.
+- Driveby peds will no longer be removed from the world if marked as Your Killer.
+- Fixed Rep and Dealer Money values not updating in the save file when buying things from the weapons dealer. 
+- Changed how the Stash Vehicle is spawned, this should fix certain models not being able to spawn. If you have a vehicle that is not compatible with the old way (you will notice the blip for it blinking when you get close), spawn a new one, and set that as the Stash Vehicle, this will switch it over to use the new spawning method. Its inventory contents will not be lost instead will be carried over to the new Vehicle.
+
+0.2.15
+- Cop Presence will now start at 1 for all areas, This will stop the heat bar going crazy in them rich areas for no reason.
+- Stash Vehicle code has been reworked, this should enable me to have more stash vehicles in future.
+- Area dealer spawn method has been rewritten, it should be much more reliable in un populated areas.
+- Area Dealers will now only drop a Bag if killed by a ped in the players group.
+- Fixed a bug that could cause the players Debt to go below 0.
+
+ 0.2.15a
+- Fix crash on bag pickups.
+
+0.2.16
+- The Rat Mechanic's instant wanted level has been replaced with a patrol car, that has an increasing chance to spawn based on the players Heat. If they find you they will peacefully attempt to search you. If you do not comply you will get 3 stars. They will stop tracking you if your heat drops low enough.
+- AreaHeat is now modified by the amount of peds that are not Customers that can see the deal taking place every second for 10 seconds.
+- Fixed a Bug that could stop the player taking money out the stash vehicle.
+- Swat, Army and Rangers can no longer be marked as the players killer.
+- Players Customers can no longer be selected as AreaDealers customers.
+- Added checks to see if a copy of the players stash vehicle has been spawned by the game, if found this vehicle will be set as your stash vehicle and no vehicle will be spawned by the script.
+
+0.2.17
+- Customers you drop to can no longer be selected to be a dealer or a customer of a dealer.
+- Heat Bar removed.
+- Gang strength has a stronger effect on reducing the chance of a tip about a local dealer.
+- Once a dealer has been discovered via a tipoff, you will no longer receive more tipoffs about this dealer. 
+- tips from customers may also tell you about incoming police. Gang strength reduces the chance of these tips also.
+- Wealthy and Normal areas starting gang strength increased from 2 to 5.
+- Removed "You have no drugs" spam when approaching a customer while having no drugs.
+- Any customer that doesn't get served may result in the local gang strength going up.
+
+0.2.18
+- Any police spawned by dealing will do so based on the local jurisdiction. LSPD, LSSD and SAPR.
+- You can now hire Dealers, to do so find one and approach them. An offer of cash is required, the more money offered the higher the chance they will accept working for you.
+- Players dealers will sell any product you give them over time at street price, and any money made can be collected at anytime. They take a 20% cut when doing so.
+- Number of allowed player dealers is dependant on your rep/level with Zee.
+- Players dealers drop a bag on death containing any money earned from sales and drugs carried.
+- Dealers info is saved in its own XML (This file is generated if one isn't already present)
+- All Blips should now be named depending on the peds current role. (make sure debug = false) 
+- Driveby peds/vehicles (and their blips) are now removed if you get far enough away and are not in the same area as peds/vehicles.
+- Small buffs to Drug demands, As Well as adjustments to how demands are randomly generated.
+- Max customers increased from 5 to 10.
+- Group members of the player can no longer be customers of area dealers.
+- Fixed an old bug with customers who are driving a vehicle not driving to the player.
+- New method for checking if a ped is being used already.
+
+0.2.18a
+- Fixed wrong resons being displaed for why you cant hire a dealer.
+- Possibly fixed System.NullReferenceException.
+- Area dealers menu can no longer be opened while moving.
+
+0.2.18b
+- More fixes for crashes.
+
+0.2.18c
+- "DealerSim Hours Passed " + hoursPassed; Notification now needs DEBUG flag to be true.
+- Fixed method that checks if a ped is being used. (Was returning False with area dealers, when selecting police is allowed)
+- Tick used for different parts of the script are now staggered. (Should improve performance in certain situations.)
+- Fixed being able to hire more dealers than should be allowed for Zee's level.
+- Fixed "Reason" spam when being told why you cant hire a dealer.
+- Gang strengths effect on receiving tips about dealers reduce by 25%.
+- All tips have a +10% chance of happening.
+- Fixed Marked Killers not giving Drugs back after collecting their bag.
+
+0.2.18d
+- Added "BAYTRE" to world area list.
+- player dealer debug info now needs DEBUG flag to be true.
+
+0.2.19
+- Added "OBSERV" and "GALLI" tags too world area list.
+- Area dealers now have an attack state.
+- fixed 'player dealer debug info now needs DEBUG flag to be true'.
+
+0.2.20
+- Your dealers can now follow you, the command is found in their menu, When following they will fight by your side and enter any vehicle you enter, opening the menu again they can be told to stop following, making them start dealing again if there is not a dealer already working for you in the current area.
+- You can give your dealers weapons.
+- You can buy armor for your dealers from Zees weapon dealer.
+- You can can carry 5 body armours, and they can only be used when giving to dealers. 
+- Stash house and Vehicles can now store body armour. Retrieving armour from an inventory while the player has less than 100% will use that armour.
+- Drive bys can now be caused by Attacking an Area dealer or acting hostile around one, Failing and successfully bribing a dealer. When a driveby is spawned, if an area dealer is nearby, he will also join the fight. 
+- You can now remove stash vehicle status from a vehicle, Push the set Drug Car button while inside a stash vehicle.  
+- Fixed area dealer menu offer maximum not updating properly.
+- Fixed Set Drug Car crashing the script when the current vehicle is not a valid type.
+
+0.2.20a
+- Fixed player dealers breaking after asking to follow.
+
+0.2.21
+- Added "BRADT" to world area list.
+- Removed "Annoying Thing" notification.
+- Player Dealers now have a deal state. While in this state customers will approach them.
+- Instructing a Player Dealer to "Work here" while sat in a vehicle will make them leave the vehicle before they start working.
+
+0.2.22
+- Fixed Zee giving the player free drugs when their debt is too high.
+- Re-wrote the code that handles giving the player the bag, this fixes any inconsistencies and also allows the player to pedal on a bike.
+- Decrease the time between checking playerWeapon amount from 10sec to 1sec.
+- Zee's dealer menus can no longer be opened while a menu is already open.
+- Rival dealers and all customers can no longer be chosen if inside an interior.
+- Rival dealers and all customers can no longer be chosen if under ground.
+- Zee can no longer attack the player after doing a deal.
+
+0.2.23
+- Zee's Driver, and dealers can no longer be chosen to be rival dealers or customers of a dealer.
+- Zee's Dealers will no longer include peds in the players group when deciding if the area is too busy.
+- Added multiplier to Player Dealers Menu.
+- Player dealers can no longer be damaged by the player.
+- Bag pickups will now only live for 2 minutes. After the time is up they will despawn.
+- Fixed not being able to remove drug car status from a vehicle when pushing the set drug car button.
+
+0.2.24
+- Telling a dealer to follow or work here will now flag dealer data to be saved.
+- Fixed duplicate player dealer ID's being allocated in the LSLife_Dealers.xml (if you have duplicates they will be fixed on first time loading with the new update).
+- Changed INI to have DEBUG off.
+
+0.2.25
+- Dealers who are not currently working will no longer count while checking if there is a dealer in the area when telling a dealer to "Work here".
+- Player dealers will no longer be seen serving customers if they have no stock.
+- Fixed subtitles that is supposed to show when a rival dealer decides to rob you after making him a lowball offer.
+- Added subtitle for when rival dealer accepts an offer.
+- You can now hire a dealer in an area where you already have a dealer, this new dealer will be put into Follow mode, and will not work until you move him to a new area.
+- Player dealers on follow mode will only be put into the players group if the player is less than 100m away.
+
+0.2.26
+- Fixed a possible script crash when saving player dealer data.
+- Fixed player dealer follow mode adding dealers to the players group when they where more than 100m away.
+- Player Dealers on Follow mode (if the ped is currently spawned) will have a dark Blue blip, working dealer Light Blue.
+- Fixed Player Dealers being put into working mode on script load when there was more than 1 working dealer already in the area.
+- Player dealers ammo for weapons will now be replenished automatically when they are loaded/saved. (until i implement a way for them to buy ammo, or the player to give them ammo)
+- Vanilla Unicorn is now a valid location for dealing, for both player and rivals.
+- Added notification for DEBUG mode to display the hash of the players current interior and if the interior is does not allowed dealing. To display this enable DEBUG and enter location, hit the J button. If you find a location you think should allow, send me a message with the Hash.
+
+0.2.27
+- Fixed Player dealer position not updating correctly.
+- Fixed Player dealers who are on follow not fighting.
+- Player dealer menu will now close it self when you walk away from the dealer you are interacting with.
+- Player and Rival dealer types will now use ingame speech to communicate with the player.
+- Player dealer bags will now contain dealers weapons.
+- Fixed Rival dealers dropping 2 bags.
+- Fixed Player dealers not despawning correctly.
+- Players rep/level effect on Zee's reload times reduced by 50%.
+
+0.2.27a
+- Removed Park Ranger from being counted as police when selling (for some reason all women are beign counted as this type, started happening recently, no idea why).
+
+0.2.27b
+- Fixed crash related to a dead player dealer and their bag.
+- Added After Hours club to allowed list.
+- Player dealers that get removed from the players companion group (somehow?) will be added back in.
+- New Debug feature, All peds that are allowed to be customers will have a True above their heads, if not a False will show.
+
+0.2.27c
+- Fixed players Total drugs not being recalculated after giving drugs to a dealer, should fix any remaining issues with the bag.
+- Fixed Script crash when despawning a Player Dealer.
+
+0.2.28
+- Killing a rival dealer using a takedown while he can see you can now spawn a drive by.
+- If a rival dealer can see the player making a sale, They may attack and a drive by can spawn.
+- Rival dealers will now only turn to speak to the player if they can see or hear the player.
+- Fixed Not being able to interact with Rival dealers under certain situations.
+- Implemented possible fix for people having script crashes while spawning peds.
+- All blips and spawned entities should now be removed on a script crash/reload.
+- Capped player heat at 100, player heat will now be reset to the minimum after being busted,  wasted(with drugs in possession), or being searched by police and not having drugs in possession. This will not reset area heat. So constantly dealing in the same area over and over without letting the area cool off, will attract the attention of the police extremely fast.
+- Ped variation Data for player dealers is now saved.
+
+0.2.29
+- Fix for another crash related to a dead player dealer and their bag.
+- Players robber can no longer be assigned to be a rival dealer or a customer of a dealer.
+- Tweaks to Police called out for dealing with high heat.
+- better method for gettings peds in the world.
+
+0.2.29a
+- Fixed rival dealers attacking for no reasons.
+- Removed green blip from police who spot you dealing.
+
+0.2.29b
+- Fix Stash Vehicle blip disappearing when vehicle is despawn when far away.
+- Fixed script crash related to saving new dealer information when hiring a dealer.
+
+0.2.29c
+- Fixed Drug car blip not appearing when loading into world while far away from its location.
+- New method for adding blips to entities, will check if a blip already exists first and edits that blip instead of creating a new one. 
+- Change how "Drive-By Vehicle" blip is handled.
+- Rival dealers that are attacking the player will exit attack state upon player death.
+- Fixed bug with setting player dealer ped variation on spawn.
+ 
+0.2.29d
+- Fixed picking up dealers bag swaping the players weapons, any weapon in the bag that the player has will now be ignored but its ammo will be added to the players.
+- Dealer delivery time will now be shown in 12 hour format and have will now have a minimum of a 5 hour in game wait.
+- Peds chosen to be random dealers will now need to be in the players current area and a minimum of 20m away from the players position.
+- Fixed duplicate Stash Vehicles when loading a quicksave.
+- Peds in the players vehicle can no longer be chosen to be dealers or customers of a dealer.
+- Fixed stash vehicle spawns for regions that use a , decimal divider.
+- Fixed offering a dealer more than 100k crashing the script.
+- Invisible or Alpha 0 peds can no longer be selected to be customers or rival dealers.
+
+0.2.30
+- New purchasable stash house system. (MAKE SURE YOU COPY OVER THE NEW LSLIFE_STASHHOUSE.XML to your LSLIFE FOLDER)
+- Diamond Casino and Tequi-la-la added to valid dealing locations
+- Fixed bug with time of Zees delivery.
+- Fixed bug with workers weapon gaining the players weapon attachments upon hiring.
+- Honking your horn while near a working dealer will make then follow you.
+- Workers Menu will now show the workers current health and armour amount.
+- If a following worker is injured and near a stash house or hospital they will attempt to heal themselfs.
+    Hospitals are instant and cost money, stash houses heal over time and are free.
+- Entering a stash house while workers are following will cause them to wait outside for you.
+- Workers are now very effective in combat.
+- Workers sales are now effected by the areas drug demands and amount of dealers in the area. 
+- Rivals accuracy, armour and shoot rating now has a base of 1 + (random number between 0 and GangStength*10)
+- Peds standing on balconies should no longer be valid as customers or dealers.
+- Driveby vehicle clean-up fixes.
+- You can now dismiss Zee's drivers/dealers by calling for a new one.
+- Hopefully fixed robbers blip disappearing.
+- Other misc bug fixes and improvements.
+
+0.2.30a
+- Fixed dealers going under the map when spawned.
+0.2.30b
+- Fixed the Stashouse.xml, You must use the new one supplied.
+- Some changes to drivebys.
+
+0.2.31
+- New sprites for menus. Those of you that are updating make sure to copy the new sprites folder into your LSLIFE folder.
+- Customers should no longer get so angry when bumping into them after a sale.
+- Driveby peds skills and weapons will now scale with gang strength.
+- The amount of peds in a drive by is now random.
+- Overhauled drive by AI. 
+- Fixed an issue with workers healing at a hospital.
+- Possible fix for a script crash when spawning a bag.
+
+0.2.32
+- New xml for the LsLife folder, LSLife_Spawns.xml. script will not work without it!
+- Added option to ini to disable use of sprites in menus. (for ultra widescreen users)
+- Buying drugs has changed, Now you must place an order with Zee, then collect this order from his people. The location of this meeting will be chosen at random from the LSLife_Spawns.xml (make sure you copy it into your LSLIFE folder).
+- All Ounces purchased from a supplier must be stashed and converted to Grams at a stash house before they can be sold.
+- Large amounts of drugs will require the use of a stash vehicle.
+- A large amount of drugs will be defined as an amount that would bring your total carried drug inventory above 256oz.
+- Credit limit is now increased by rep.
+- Made changes to Rival dealer movement behaviour.
+- Fixed bug with rival dealers spawns when player changes area.
+- Killing or hiring a dealer will result in a boost to the current areas drug demands for a period of time. The length of this buff ranges from 10mins to 1 min, based on the local rivals strength.
+- Amount of rivals in a driveby is now based on local rivals strength.
+- Handing to or receiving money/drugs from a dealer will increase the areas Heat for a period of time, If seen by police will result in 2 stars, and if seen by a rival may result in them attacking you.
+- Added Hard mode option to ini, This will adjust drug prices to a more realistic level, increase the total vehicles involved in a driveby.
+- Hired workers will enter follow state when hired.
+- Initial debt cap reduced from 100,000 to 1,000 when hardmode activated.
+- Zee will only get $5k for free if he reloads with less than $1k in the bank when playing hardmode. Down from $50k/$10k.
+- New UI element for displaying amounts carried. Same Key as before, but its now a toggle to display/hide.
+
+0.2.33
+- Fixed menu descriptions.
+- Fixed Order menu not using sprites when option is turned on.
+- Fixed money not being applied to Zee when paying Debt.
+- Fixed weapons and armour reducing debt with Zee instead of increasing it.
+- Debt cap now properly applies to weapons dealer.
+- Added Markers option to ini, setting this to false will disable marker at the rear of a stash vehicle, entrance to a stash house and stash location.
+- No Marker setting in the ini will default to true.
+- Fixed not being able to interact with customers when in a vehicle while a customer is stood close to the vehicle.
+- All ounces (un-processed) will be coloured red inside menus.
+
+0.2.34
+- Made improments to checking if a dealer is working or following.
+- Fixed using vehicle Horn to make a dealer follow.
+- New AreaDebug ini option for displaying Area Stats, enabling it will make the Inventory Key also display current Area stats.
+- Fixed area demands being duplicated across all areas.
+- Fixed area demands randomization.
+- Rewrote GangGrowth function, should be more reliable.
+- Fixed StashVehicle being incorrectly flagged as destroyed.
+
+0.2.35
+- Fix script crash a few people are having on placing order.
+- Reset immune to player on worker despawn and script reset.
+- Following workers who are removed from the players group will move to Followstate (ready to follow again if player is in range) and have events blocked.
+- All custom relationship groups disposed of properly on script reset.
+
+0.2.36
+- include missing lslife_spawns.xml
+- drug demands based on amount of dealers working an area is now same for worker and player.
+- Added a marker above the current worker being interacted with when a menu is open.
+- Added subtitle for when stash vehicle is not close enough to the meeting spot.
+
+0.2.37
+- Area data cop/gang strengths, Area heat are now saved 4 times a day at 12am/12pm and 6pm/am, for every area you have visited and loaded when script starts.
+- Area Rep can now be earned selling drugs in an area, each level earned though rep will increase your chances of a customer offering their services. (will do more with this later)
+- Sales from a worker earns rep in workers area.
+- Gang growth will only happen 4 times a day every 6 hours. At 12am/pm and 6am/pm.
+- Area heat now decays alot slower 10 points per in game hour instead of 1 per in game min.
+- Robbers bag will now contain the players money - 10% (it is no longer given to the ped to drop, cap peds have)
+- Changed how things are spawned when placing an order, removes that little delay and maybe fix the scriptcrash people have?.
+- Orders that require a stash vehicle will now be placed into the vehicles stash when picked up.
+- Any stash house flagged as inside will be set to false if the player is closer to the entrance than the exit.
+- Hopefully fixed any remaining bugs in workers becoming unresponsive.
+- Fixed typo on stash vehicle save causing crackOz to never be saved correctly when taking out of the vehicle.
+- Fixed inventory text not working on resolutions higher/lower than 1080p
+- Fixed picking up Robbers bag contents overwriting any inventory the player is carrying.
+- Area Debug info will close when any LsLife Menu is open.
+- Added more debug info (AREADEBUG=true in ini).
+- DEBUG can now be toggled without needing to change the ini and reload. To do this enter lsdebug in the cheat code box. gta cheat code box key is the grave key (underneath the escape key).
+- areadebug in cheat code box will toggle AREADEBUG.
+
+0.2.38
+- Hopefull fixed any remaining problems with ordering drugs.
+- Following workers will now switch to Unarmed if the player does so, and will switch to there best weapon if not. (this can be used to stop them shooting while in a vehicle)
+- The amount of drugs a customer decides to purchase is now effected by your rep in the area you are selling, instead of Zee's rep.
+- Not replying to customers asking for a drop will result in -10 rep for that area.
+- New options menu, to access ring Zee and select options. For now only option is for setting the inventory text position.
+- Most notifications should now be formatted like a text message, with a picture of the ped who is contacting you.
+
+0.2.39
+- Now requires SHVDN 2.10.14.
+- Fixed a bug that can cause workers and Zee to not be interactable after player death.
+- Fixed SetRandomCombatStats function causing a script crash when gang strength is less than 0.
+- New function for loading positions from xml, should be compatible with all system language settings.
+- Fixed a bug that can cause player heat to rise above 100.
+- Added compatibility for Liberty City Rewind Map. To enable the use of this map with LsLife make sure "LCRWMAP = true" in the LsLife.ini.
+- Added 2 new XML files in LSLife\zoneData\ these xml files control each areas assigned wealth and police unit type dispatched due to high heat.
+- LsLife_LSSA.xml contains zoneData for the standard GTA map.
+- LsLife_LCRW.xml contains zoneData for the Liberty City Rewind map.
+- THESE XML FILES MUST BE PRESENT IN scripts\LSLife\zoneData\ OR THE SCRIPT WILL NOT WORK!!
+
+0.2.40
+- Area Heat gained for being reported to police for suspected drug dealing has been reduced, from 1000 to 200.
+- Area Heat decay per 24h has been increased from 50 to 100.
+- After being searched by police and found to not be carrying drugs, that areas heat is reduced by 100.
+- Fixed values in LsLife_StashHouses.xml for the stash house in Sandy. You need to replace this file if you have not already fixed the issue your self.
+- Added <area id="BANHAMCA"> and <area id="PROL"> to zoneData\LsLife_LSSA.xml. You need to replace this file. This will enable you to sell in NorthYankton with no probs and some other area.
+
+0.2.40a
+- Fixed LsLife_StashHouses.xml, i managed to put wrong values again.
+
+0.2.41
+- You can now drop all drugs carried by pushing the same button used for setting a stash vehicle while on foot.
+- All pickups despawn timers will reset if the player is near.
+- Changed how the players total drugs is handled.
+- Adjusted formula for the amount of drugs a customer will require. It will scale slower now and be based on the players area rep level.
+- Fixed a bug that stopped player heat from ticking down over time.
+- fixed a bug that caused 24h heat decay to happen every hour.
+- changed 24h heat decay to 6h, and reduced its effect from 100 to 25.
+- Drivebys will now share information between each other regarding the whereabouts of the target.
+- New method to decide how much a drop customer wants. This will now be done in more realistic values and can scale with the players area rep level.
+
+0.2.42
+- Fixed script crash related to drivebies leader being dead.
+- Fixed drivebys not being disposed of correctly.
+- Fixed Drop customers not being targetable
+- Fixed potential crash when cancelling an order.
+- Fixed customers thinking the players vehicle is their vehicle (i think).
+- Area heat decay up from -25 to -40 per 6hours.
+- Area Rep lost for ignoring a drop request will now be -10% rep instead of -10;
+- Area rep gained for deals that would earn less than 1 rep, e.g. 0.1 will now earn be counted.
+- Area Cop presence will now decay -1 per day.
+- Area Rep earned and total rep for an area will now be displayed in the notification that tells you how much you sold.
+- Experimental selling from stash house. Not finished at all but i thought id let you guys use it.
+- While in a house if you get the fast food guy as a customer, this means no ped models have been stored from that area. Simply go outside and wander around a little make sure some peds are spawned, then go back in the house. All model hashes from the area are stored for generating customers while inside.
+  Customers will spawn at the houses exit position, based on the areas demands. Just start dealing in a house to use it.
+- Added pigs states and notifaction to debug mode.
+- Increased the distance needed for the player to travel once seen by pigs, before wanted levels are given from 4m to 8m.
+- Workers will now use the new formula for sale amounts based on the workers area reputation, and have there sales reduced from 4 per in game hour to 3.
+- New old customer class, This means i can track additional infomation about an old customer that i could not before.
+- Zee's driver will now drive alot better. Using a new function wrote to control his speed.
+- Drivebys will now only ask others for a known target location if they are in a driveTo or patrol state. (this stops them getting in their vehicle and back out again when in a fire fight on foot).
+

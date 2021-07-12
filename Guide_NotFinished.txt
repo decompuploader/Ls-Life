@@ -1,0 +1,54 @@
+Guide Catagories
+
+	
+	Stash Vehicle
+		General
+		Inventory
+	
+	Stash House
+		General
+		Inventory
+		
+	Player
+		General		
+		Inventory
+		Death/Busted
+		
+	Zee
+		General
+		Orders
+		Dealing
+		Weapons
+		Lift
+		Debt
+		
+	Workers
+		General
+		Inventory
+		Dealing
+		Following
+		Healing
+		Death
+		
+	Rivals
+		General
+		-	Rivals are your competition, each area on the map has its own. 
+		-	They have a chance to grow in size if a demand for a drug is left unmet.
+		-	Killing any member of this rival gang will reduce there numbers.
+		-	Meeting the demand for all drugs in an area will stop them growing completly.
+		-	Rivals can only attack if they have the numbers to do so.
+			
+		Dealers
+		-	If able to, an area will spawn a rival dealer. This dealer will directly compete with the player and any workers in that area.
+		-	Dealers can be hired (for a price) if the player has enough levels to do so, the chance of acceptance is based on the price and the current areas rival strength.
+		-	If killed Dealers will drop a bag containing a random amount of drugs and cash.
+			
+		Drivebys
+		-	Drivbies can be tiggered a number of ways, there numbers, skill and equipment based on the rivals strength.
+		-	If a dealer sees the player interacting with a customer or worker they may call for a driveby.
+		-	If a dealer sees the player aiming a gun or acting anyway agressivly they may call for a driveby.
+		-	If a dealer is hired by the player a driveby may spawn.
+		-	If a dealer is killed by the player a driveby may spawn.
+			
+		Robbers
+	
