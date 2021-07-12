@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Exit position defines what interior is used for the property -->
+<!-- if you use an online interior, be sure to enable MPMaps -->
+<!-- weapons MUST contain an unarmed entry and id MUST be a unique whole number -->
+<stashHouses>
+  <house id="0">
+    <entrancePos>
+      <X>-112.616</X>
+      <Y>-1479.229</Y>
+      <Z>36</Z>
+    </entrancePos>
+    <exitPos>
+      <X>151.36</X>
+      <Y>-1007.56</Y>
+      <Z>-99</Z>
+    </exitPos>
+    <stashPos>
+      <X>151.9</X>
+      <Y>-1001.4</Y>
+      <Z>-99</Z>
+    </stashPos>
+    <healthPos>
+      <X>154.6751</X>
+      <Y>-1007.43</Y>
+      <Z>-99.2</Z>
+    </healthPos>
+    <price>250</price>
+    <purchased>false</purchased>
+    <inside>false</inside>
+    <stash>
+      <weed>28</weed>
+      <crack>0</crack>
+      <cocain>0</cocain>
+      <money>0</money>
+      <armour>1</armour>
+      <weapons>
+        <weapon id="0">
+          <HASH>Unarmed</HASH>
+          <AMMO>0</AMMO>
+        </weapon>
+      </weapons>
+    </stash>
+  </house>
+  <house id="1">
+    <entrancePos>
+      <X>485.8897</X>
+      <Y>-1529.437</Y>
+      <Z>28.2</Z>
+    </entrancePos>
+    <exitPos>
+      <X>151.36</X>
+      <Y>-1007.56</Y>
+      <Z>-99</Z>
+    </exitPos>
+    <stashPos>
+      <X>151.9</X>
+      <Y>-1001.4</Y>
+      <Z>-99</Z>
+    </stashPos>
+    <healthPos>
+      <X>154.6751</X>
+      <Y>-1007.43</Y>
+      <Z>-99.2</Z>
+    </healthPos>
+    <price>150000</price>
+    <purchased>false</purchased>
+    <inside>False</inside>
+    <stash>
+      <weed>0</weed>
+      <crack>0</crack>
+      <cocain>0</cocain>
+      <money>0</money>
+      <armour>0</armour>
+      <weapons>
+        <weapon id="0">
+          <HASH>Unarmed</HASH>
+          <AMMO>0</AMMO>
+        </weapon>
+      </weapons>
+    </stash>
+  </house>
+  <house id="2">
+    <entrancePos>
+      <X>1941.132</X>
+      <Y>3842.222</Y>
+      <Z>34.50514</Z>
+    </entrancePos>
+    <exitPos>
+      <X>151.36</X>
+      <Y>-1007.56</Y>
+      <Z>-99</Z>
+    </exitPos>
+    <stashPos>
+      <X>151.9</X>
+      <Y>-1001.4</Y>
+      <Z>-99</Z>
+    </stashPos>
+    <healthPos>
+      <X>154.6751</X>
+      <Y>-1007.43</Y>
+      <Z>-99.2</Z>
+    </healthPos>
+    <price>150000</price>
+    <purchased>false</purchased>
+    <inside>false</inside>
+    <stash>
+      <weed>0</weed>
+      <crack>0</crack>
+      <cocain>0</cocain>
+      <money>0</money>
+      <armour>0</armour>
+      <weapons>
+        <weapon id="0">
+          <HASH>Unarmed</HASH>
+          <AMMO>0</AMMO>
+        </weapon>
+      </weapons>
+    </stash>
+  </house>
+</stashHouses>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LSLIFE>
+  <playerInventory>
+    <weed>0</weed>
+    <crack>0</crack>
+    <cocain>0</cocain>
+  </playerInventory>
+  <drugCarStash>
+    <weed>0</weed>
+    <crack>0</crack>
+    <cocain>0</cocain>
+    <money>0</money>
+  </drugCarStash>
+  <dealer1>
+    <debt>0</debt>
+    <weed>20</weed>
+    <crack>3</crack>
+    <cocain>2</cocain>
+    <money>1000</money>
+    <reloaded>False</reloaded>
+  </dealer1>
+</LSLIFE>
